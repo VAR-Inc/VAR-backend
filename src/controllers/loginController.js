@@ -20,7 +20,7 @@ loginRouter.route('/')
 				const { username } = user;
 				const token = encodeJWT(user);
 				return res.status(200).json({
-					token, username, userProfile
+					success: true, token, username, userProfile
 				});
 			}
 			return res.status(400).json({
