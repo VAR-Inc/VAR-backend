@@ -4,7 +4,7 @@ import mongoose from 'mongoose';
 import cors from 'cors';
 import { errorHandler, unknownEndpoint, tokenExtractor } from './middlewares';
 import { MONGODB_URI, NODE_ENV } from './config';
-import { authRouter } from './controllers';
+import { authRouter, loginRouter } from './controllers';
 const app = express();
 
 mongoose.connect(MONGODB_URI, {
@@ -31,6 +31,7 @@ app.use(express.json());
 app.use(cors());
 
 app.use('/api/auth', authRouter);
+app.use('/api/auth/login', loginRouter);
 
 app.use(unknownEndpoint);
 app.use(errorHandler);

@@ -1,4 +1,5 @@
 import authRouter from './authController';
+import loginRouter from './loginController';
 
 
-export { authRouter };
+export { authRouter, loginRouter };

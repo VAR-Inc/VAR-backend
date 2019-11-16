@@ -1,0 +1,7 @@
+post http://localhost:8300/api/auth/login
+Content-Type: application/json
+
+{
+  "usernameOrEmail": "abc@123.com",
+  "password": "123456"
+}

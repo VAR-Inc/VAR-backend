@@ -6,14 +6,10 @@ const profileSchema = new mongoose.Schema({
 		ref: 'User'
 	},
 	picture: { type: String },
-	fullname: {
-		type: { type: String }
-	},
+	fullname: { type: String },
 	servicesProvided: [{ type: String }],
 	constactInformation: [{ type: String }],
-	aboutMe: {
-		type: String
-	},
+	aboutMe: { type: String },
 	rating: { type: Number },
 	reviews: [{ type: String }]
 });
