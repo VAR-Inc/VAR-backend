@@ -1,7 +1,7 @@
-post http://localhost:8300/api/auth/login
+post http://localhost:8300/api/login
 Content-Type: application/json
 
 {
   "usernameOrEmail": "abc@123.com",
-  "password": "123456"
+  "password": "abc123"
 }

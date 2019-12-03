@@ -2,7 +2,7 @@ post http://localhost:8300/api/auth/signup
 Content-Type: application/json
 
 {
-  "email": "abc@123.com",
-  "username": "abc123",
-  "password": "123456"
+  "email": "",
+  "username": "",
+  "password": ""
 }
