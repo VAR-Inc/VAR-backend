@@ -1,4 +1,4 @@
 import authRouter from './authRouter';
-import loginRouter from './loginRouter';
+import usersRouter from './usersRouter';
 
-export { authRouter, loginRouter };
+export { authRouter, usersRouter };

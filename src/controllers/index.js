@@ -1,5 +1,5 @@
-import { signup } from './authController';
-import { login, secret } from './loginController';
+import { signup, login } from './authController';
+import { getUsers } from './usersController';
 
 
-export { signup, login, secret };
+export { signup, login, getUsers };

@@ -3,19 +3,21 @@
 import mongoose from 'mongoose';
 
 const userSchema = new mongoose.Schema({
-	email: { type: String },
 	username: { type: String },
+	email: { type: String },
 	password: { type: String },
-	secretToken: { type: String },
-	secretTokenExpiry: { type: Date },
-	active: { type: Boolean, default: false },
-	deactivated: { type: Boolean, default: false },
-	resetPasswordToken: { type: String },
-	resetPasswordExpiry: { type: Date },
-	profile: {
-		type: mongoose.Schema.Types.ObjectId,
-		ref: 'Profile'
-	}
+	isAdmin: { type: Boolean, default: false },
+	firstname: { type: String },
+	lastname: { type: String },
+	address: { type: String },
+	about: { type: String },
+	lga: { type: String },
+	experience: { type: String },
+	state: { type: String },
+	occupation: { type: String },
+	phone: { type: String },
+	rating: { type: Number },
+	comments: [{ type: String }]
 });
 
 userSchema.set('toJSON', {
