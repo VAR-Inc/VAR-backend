@@ -7,6 +7,4 @@ export const {
 	MONGODB_URI,
 	SALT,
 	SECRET,
-	SITE_URL,
-	SENDGRID_KEY
 } = process.env;

@@ -1,8 +1,24 @@
-post http://localhost:8300/api/auth/signup
+post http://localhost:7500/api/auth/signup
 Content-Type: application/json
 
 {
-  "email": "",
-  "username": "",
-  "password": ""
+  "email": "abc@123.com",
+  "username": "abc123",
+  "password": "123456",
+  "firstname": "Mr. Abc",
+  "lastname": "Def",
+  "address": "No. 123 Abc Road",
+  "lga": "Lazy Dog L.G.A",
+  "state": "Some State",
+  "occupation": "general repairer",
+  "phone": "0-123-456-7"
+}
+
+###
+post http://localhost:7500/api/auth/login
+Content-Type: application/json
+
+
+{
+  
 }
