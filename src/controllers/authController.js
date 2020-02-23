@@ -39,7 +39,7 @@ export const signup = async (req, res, next) => {
 		return next(validSignup.error);
 	}
 	try {
-		const userExists =			(await User.findOne({ email: validSignup.value.email }))
+		const userExists = (await User.findOne({ email: validSignup.value.email }))
 			|| (await User.findOne({ username: validSignup.value.username }));
 		if (userExists) {
 			return res
@@ -59,9 +59,11 @@ export const signup = async (req, res, next) => {
 		const token = encodeJWT(newUser);
 		return res
 			.status(201)
-			.json({ success: true, message: 'registration successful', token });
-	} catch (exception) {
-		next(exception);
+			.json({
+				message: 'registration successful', isLoggedIn: true, user: newUser, token
+			});
+	} catch (error) {
+		next(error);
 	}
 };
 
@@ -74,11 +76,11 @@ export const login = async (req, res, next) => {
 		if (user && passwordValid) {
 			const token = encodeJWT(user);
 			return res.status(200).json({
-				success: true, token, user
+				isLoggedIn: true, token, user
 			});
 		}
 		return res.status(400).json({
-			sucess: false, message: 'login credentials incorrect, please check and try again'
+			message: 'login credentials incorrect, please check and try again'
 		});
 	} catch (error) {
 		next(error);

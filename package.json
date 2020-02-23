@@ -4,6 +4,12 @@
   "description": "HTML/ CSS/ JS",
   "main": ".env.example.js",
   "scripts": {
+    "build:ui": "rm -rf dist && cd ../website && npm run build && cp -r dist ../backend/",
+    "deploy": "git push heroku master",
+    "deploy:full": "npm run build:ui && git add . && git commit -m uibuild && git push && npm run deploy",
+    "logs:prod": "heroku logs --tail",
+    "lint": "eslint .",
+    "start": "node index.js",
     "dev": "cross-env NODE_ENV=development node_modules/.bin/nodemon --exec babel-node src/server.js",
     "lint": "node_modules/.bin/eslint src",
     "lint-fix": "node_modules/.bin/eslint src --ext  .js --fix"

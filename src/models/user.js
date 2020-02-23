@@ -17,6 +17,7 @@ const userSchema = new mongoose.Schema({
 	occupation: { type: String },
 	phone: { type: String },
 	rating: { type: Number },
+	photo: { type: String },
 	comments: [{ type: String }]
 });
 

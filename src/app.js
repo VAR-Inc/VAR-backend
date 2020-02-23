@@ -16,12 +16,13 @@ if (NODE_ENV === 'development') {
 		next();
 	});
 }
+app.use(errorHandler);
 
+app.use(express.static('dist'));
 app.use(express.json());
 app.use('/api', usersRouter);
 app.use('/api/auth', authRouter);
 
-app.use(errorHandler);
 app.use(unknownEndpoint);
 
 

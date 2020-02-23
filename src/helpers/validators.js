@@ -10,6 +10,7 @@ export const signupSchema = Joi.object({
 		.required(),
 	password: Joi.string()
 		.regex(/^[a-zA-Z0-9]{6,20}$/)
+		.rule({ message: 'Password should contain letters and numbers with minimum of 6 characters' })
 		.required(),
 	firstname: Joi.string().required(),
 	lastname: Joi.string(),
